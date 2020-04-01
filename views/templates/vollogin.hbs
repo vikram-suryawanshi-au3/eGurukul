@@ -1,0 +1,81 @@
+<div class="container-fluid form-body">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-10 m-auto">
+                <div class="row no-gutters form-row">
+                    <!--left side picture-->
+                    <div class="col-md-6 left-img p-0">
+                        <h2 class="slogan-text"></h2>
+
+                        <!--  slogan -->
+                        <p class="slogan-details">
+                            “The best way to find yourself is to lose yourself in the
+                            service of others.”
+                        </p>
+
+                        <div class="btn-box">
+                            <a class="btn btn-submit" href="/vol/registration">Sign Up</a>
+                        </div>
+                    </div>
+
+                    <!--right side form-->
+                    <div class="col-md-6 p-0">
+
+                        <div class="form-wrapper">
+                            {{#if flash}}
+                            <div class="alert alert-danger alert-dismissible fade show m-0 p-1" role="alert">
+                                <p class="m-0">
+                                    {{ flash }}
+                                </p>
+                                <button type="button" class="close p-0" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            {{/if}}
+                            <h2 class=" text-center ">
+                                Login to<span class="pinks">Your Account</span>
+                            </h2>
+                            <form action="/vol/login" method="POST">
+                                <div class="row">
+                                    {{> requiredInput type="text" name="username" className="input" label="User name"}}
+                                    {{> requiredInput type="password" name="password" className="input" label="Password"}}
+                                    <div class="btn-box">
+                                        <button class="btn btn-submit" type="submit">
+                                            Log in
+                                        </button>
+                                        <button class="btn btn-submit btn-reset" type="button" data-toggle="modal"
+                                            data-target="#resetModal">
+                                            Reset Password
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetModal">Enter your Username</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="reset-form" action="/reset-pass" method="POST">
+                        <div class="form-group">
+                            <label for="usename" class="lead">Username</label>
+                            <input type="text" class="form-control" name="username" id="usename" required
+                                placeholder="Username">
+                        </div>
+                        <button type="submit" class="btn btn-success">Reset</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

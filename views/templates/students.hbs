@@ -1,0 +1,26 @@
+<div class="container mx-3">
+    <div class="row">
+        {{#each data }}
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mx-2">
+            <div class="card">
+                <img src="{{this.profile_pic}}" class="card-img-top" alt="{{this.fullname}}">
+                <div class="card-body">
+                    <h5 class="card-title text-secondary"><strong class="text-dark">Name:</strong> {{this.fullname}}
+                    </h5>
+                    <h6 class="card-text text-secondary"><strong class="text-dark">Gaurdian:</strong>
+                        {{ this.guardian }}</h6>
+                    <h6 class="card-text text-secondary"><strong class="text-dark">DOB:</strong> {{ this.dob }}</h6>
+                    <h6 class="card-text text-secondary"><strong class="text-dark">Study:</strong> {{ this.study }}</h6>
+                </div>
+                <div class="card-footer d-flex justify-content-between align-items-center">
+                    <a href="students/report/{{this._id}}" class="text-primary" style="font-size: 1rem">Edit Report</a>
+                    <a href="students/{{this._id}}" class="text-primary" style="font-size: 1rem" data-toggle="tooltip"
+                        data-placement="top" title="Information for this student"><i class="fas fa-info-circle"></i></a>
+                    <a href="students/edit/{{this._id}}" class="float-right"><i
+                            class="fas fa-user-edit fa-2x text-info"></i></a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

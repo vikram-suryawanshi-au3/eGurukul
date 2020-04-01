@@ -1,0 +1,28 @@
+<div class="container s-report my-3">
+    <div class="row">
+        <div class="col-md-6  px-3 py-5">
+            <h6>Name :- <span class="text-secondary">{{ fullname }}</span></h6>
+            <h6>Guardian :- <span class="text-secondary">{{ guardian }}</span></h6>
+            <h6>DOB :- <span class="text-secondary">{{ dob }}</span></h6>
+            <h6>Place :- <span class="text-secondary">{{ location }}</span></h6>
+            <h6>Study Status :- <span class="text-secondary">{{ study }}</span></h6>
+
+        </div>
+        <div class="col-md-3"></div>
+        <div class="col-md-3">
+            <img src="{{profile_pic}}" class="img s-report__img" alt="{{fullname}}" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-7">
+            <h4>Details</h4>
+            <p class="report">
+                {{ report }}
+            </p>
+        </div>
+    </div>
+    <div class="btn-box">
+        <button class="btn btn-submit del-student" type="submit" data-id="{{id}}">Remove</button>
+    </div>
+</div>
